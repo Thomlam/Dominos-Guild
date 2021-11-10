@@ -27,7 +27,18 @@ public class Character {
         return characterHealth;
     }
 
-    public String toString(int attribute) {
+
+
+    public void displayStats() {
+
+        System.out.println(getName());
+        System.out.println("HP : " + toString(getHealth()));
+        System.out.println("DMG : " + toString(getDamage()));
+        System.out.println("Speed : " + toString(getSpeed()));
+
+    }
+
+    private String toString(int attribute) {
         return "" + attribute;
     }
 }
