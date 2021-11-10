@@ -1,7 +1,7 @@
 package com.compagnie;
 
 public class Character {
-    private static String name = "Pradish";
+    private static String name = "Pradish";         // this is a super name
     private static int health = 50;
     private static int damage = 5;
     private static int speed = 3;
