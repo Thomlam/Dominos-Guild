@@ -3,15 +3,15 @@ package com.compagnie;
 public class Thief extends Character{
     private static String archetype = "Thief";
     private static int dodge = 25;
-    private static int criticalHit = 25;
+    private static int criticalHit = 35;
 
     public static String getArchetype() { return archetype; }
 
-    private static int getDodge() {
+    public static int getDodge() {
         return dodge;
     }
 
-    private static int getCriticalHit() {
+    public static int getCriticalHit() {
         return criticalHit;
     }
 
@@ -26,21 +26,15 @@ public class Thief extends Character{
         }
     }
 
+    public static int CriticalDamage(int opponentHealth) {
 
-    boolean crit=false;
-
-    public int CriticalDamage(int opponentHealth) {
-        
-        if((Math.random() * 100 < getCriticalHit()) && crit == false) {
+        if(Math.random() * 100 < getCriticalHit()) {
+            criticalHit = 0;
             return opponentHealth - (getDamage() * 2);
-            //crit = true;
-            
-        }
-        else {
+        } else {
+            criticalHit = 35;
             return opponentHealth - getDamage();
-            //crit = false;
         }
-        
     }
 
     public static void displayThief() {

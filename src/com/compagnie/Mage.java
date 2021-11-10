@@ -5,7 +5,7 @@ public class Mage extends Character{
     private static String archetype = "Mage";
     private static int magicDamage = 12;
 
-    private static int getMagicDamage() {
+    public static int getMagicDamage() {
         return magicDamage;
     }
 
