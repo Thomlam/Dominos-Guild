@@ -1,24 +1,24 @@
 package com.compagnie;
 
 public class Character {
-    private String name = "Pradish";
-    private int health = 50;
-    private int damage = 5;
-    private int speed = 3;
+    private static String name = "Pradish";
+    private static int health = 50;
+    private static int damage = 5;
+    private static int speed = 3;
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
-    public int getHealth() {
+    public static int getHealth() {
         return health;
     }
 
-    public int getDamage() {
+    public static int getDamage() {
         return damage;
     }
 
-    public int getSpeed() {
+    public static int getSpeed() {
         return speed;
     }
 
@@ -29,7 +29,7 @@ public class Character {
 
 
 
-    public void displayStats() {
+    public static void displayStats() {
 
         System.out.println(getName());
         System.out.println("HP : " + toString(getHealth()));
@@ -38,7 +38,7 @@ public class Character {
 
     }
 
-    private String toString(int attribute) {
+    private static String toString(int attribute) {
         return "" + attribute;
     }
 }
