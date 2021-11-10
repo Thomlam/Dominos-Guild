@@ -1,7 +1,7 @@
 package com.compagnie;
 
 public class Character {
-    private String name;
+    private String name = "Pradish";
     private int health = 50;
     private int damage = 5;
     private int speed = 3;
@@ -22,26 +22,12 @@ public class Character {
         return speed;
     }
 
-    public int takeDamage(opponentDamage) {
-        characterHealth = getHealth() - opponentDamage
-        return characterHealth
+    public int takeDamage(int opponentDamage) {
+        int characterHealth = getHealth() - opponentDamage;
+        return characterHealth;
     }
 
-    public void String displayStats() {
-
-        String characterName = getName();
-        System.out.println(characterName);
-
-        String characterHealth = toString(getHealth());
-        System.out.println(characterHealth);
-
-        String characterDamage = toString(getDamage());
-        System.out.println(characterDamage);
-
-        String characterSpeed = toString(getSpeed());
-        System.out.println(characterSpeed);
-
+    public String toString(int attribute) {
+        return "" + attribute;
     }
-
-    displayStats()
 }
