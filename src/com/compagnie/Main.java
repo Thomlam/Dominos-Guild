@@ -1,10 +1,10 @@
 package com.compagnie;
 
-public class Main {
+public class Main extends Thief{
 
     public static void main(String[] args) {
-	int a = 0;
-    System.out.println(a);
+        System.out.println(Damage(10));
+        System.out.println(CriticalDamage(20));
 
     }
 }
