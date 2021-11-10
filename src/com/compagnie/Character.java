@@ -10,9 +10,7 @@ public class Character {
         return name;
     }
 
-    public static int getHealth() {
-        return health;
-    }
+    public static int getHealth() { return health; }
 
     public static int getDamage() {
         return damage;
