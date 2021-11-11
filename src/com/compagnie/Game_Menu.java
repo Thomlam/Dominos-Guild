@@ -6,7 +6,7 @@ public class Game_Menu extends Main{
 
     public static void ReturnOrNot (int choix2){
         while (choix2 !=0) {
-            System.out.println("if u want return to menu, press 0");
+            System.out.println("if you want return to menu, press 0");
             choix2 =VerifCheck();
         }
         System.out.println("return to menu");
@@ -37,7 +37,7 @@ public class Game_Menu extends Main{
 
     public static void start() { //Fonction pour le jeu
 
-        //TestCharacterList.main();
+        TestCharacterList.main();
     }
 
     public static void character() { //Fonction pour le jeu
@@ -49,7 +49,7 @@ public class Game_Menu extends Main{
             //Choix numéro 1
             case 1:
                 System.out.println("Create-Player");
-                //TestCharacterList.createcharacter();
+                TestCharacterList.createcharacter();
                 // Déterminer si on continue dans le jeu ou l'on retourne au menu
                 System.out.println("Choisir 0 pour retourner au menu principal.");
                 choix2 = VerifCheck();
@@ -62,7 +62,7 @@ public class Game_Menu extends Main{
             //Choix numéro 2
             case 2:
                 System.out.println("List-Player");
-                //TestCharacterList.ListPrint();
+                TestCharacterList.ListPrint();
 
                 // Déterminer si on continue dans l'affichage du score ou l'on retourne au menu
                 choix2 = VerifCheck();

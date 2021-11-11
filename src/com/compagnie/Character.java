@@ -1,6 +1,7 @@
 package com.compagnie;
 
 public class Character {
+    private static String archetype;
     private static String name = "Pradish";         // this is a super name
     private static int health = 50;
     private static int damage = 5;
@@ -8,6 +9,10 @@ public class Character {
 
     public static String getName() {
         return name;
+    }
+
+    public static String getArchetype() {
+        return archetype;
     }
 
     public static int getHealth() { return health; }
@@ -26,6 +31,18 @@ public class Character {
     }
 
 
+    public static void classValues(String archetype) {
+        if(archetype == "Warrior") {
+            int defense = Warrior.getDefense();
+        }
+        else if(archetype == "Mage") {
+            int magicalAttack = Mage.getMagicDamage();
+        }
+        else if(archetype == "Thief") {
+            int dodge = Thief.getDodge();
+            int critRate = Thief.getCriticalHit();
+        }
+    }
 
     public static void displayStats() {
 

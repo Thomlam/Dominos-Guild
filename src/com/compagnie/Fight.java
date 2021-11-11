@@ -2,7 +2,7 @@ package com.compagnie;
 
 import java.util.Scanner;
 
-public class Fight extends Game_Main {
+public class Fight extends Game_Menu {
 
     private static String j1_name;
     private static String j1_archetype;
@@ -61,39 +61,34 @@ public class Fight extends Game_Main {
         return characterHealth;
     }
 
-    private static void classValues(String archetype) {
-        if(archetype == "Warrior") {
-            j1_defense = 2;
-        }
-        else if(archetype == "Mage") {
-            j1_magicalAttack = 12;
-        }
-        else if(archetype == "Thief") {
-            j1_dodge = 20;
-            j1_critRate = 20;
-        }
-    }
-
     public static void choice() {
 
-        System.out.println("Player 1 select his brawler ");
-        Scanner sc = new Scanner(System.in);
-        String name = sc.nextLine();
-        System.out.println("You have selected : " + name);
-        j1_name = name;
-        System.out.println("Player 1 select his class (Warrior/Mage/Thief)");
-        Scanner sc3 = new Scanner(System.in);
-        String archetype = sc3.nextLine();
-        while(archetype != "Warrior" && archetype != "Mage" && archetype != "Thief") {
-            System.out.println("Wrong Class. Player 1 select his class (Warrior/Mage/Thief)");
-            archetype = sc3.nextLine();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Player 1 select his brawler in the list");
+        TestCharacterList.CharacterList();
+        int player = scanner.nextInt();
+        for(int i = 0; i < TestCharacterList.grosslist.size(); i++) {
+            /*if(player == TestCharacterList.grosslist.indexOf(TestCharacterList.grosslist.get(i))) {
+                j1_name = TestCharacterList.grosslist[i][0];
+                j1_archetype = TestCharacterList.grosslist[i][1];
+                j1_health = TestCharacterList.grosslist[i][2];
+                j1_damage = TestCharacterList.grosslist[i][3];
+                j1_speed = TestCharacterList.grosslist[i][4];
+                if(TestCharacterList.getArchetype().equals("Warrior")) {
+                    j1_defense = TestCharacterList.grosslist[i][5];
+                }
+                if(TestCharacterList.getArchetype().equals("Mage")) {
+                    j1_magicalAttack = TestCharacterList.grosslist[i][5];
+                }
+                if(TestCharacterList.getArchetype().equals("Thief")) {
+                    j1_dodge = TestCharacterList.grosslist[i][5];
+                    j1_critRate = TestCharacterList.grosslist[i][6];
+                }
+
+            }*/
         }
-        classValues(archetype);
-        System.out.println("You have selected : " + archetype);
-        j1_archetype = archetype;
-
-
-        System.out.println("Player 2 select his brawler ");
+        System.out.println("Player 2 select his brawler in the list");
         Scanner sc2 = new Scanner(System.in);
         String name2 = sc2.nextLine();
         System.out.println("You have selected : " + name2);
@@ -105,7 +100,6 @@ public class Fight extends Game_Main {
             System.out.println("Wrong Class. Player 1 select his class (Warrior/Mage/Thief)");
             archetype2 = sc4.nextLine();
         }
-        classValues(archetype2);
         System.out.println("You have selected : " + archetype2);
         j2_archetype = archetype2;
 
