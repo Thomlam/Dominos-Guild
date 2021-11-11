@@ -1,10 +1,9 @@
 package com.compagnie;
 
-public class Main extends Warrior {
+public class Main extends Fight {
 
     public static void main(String[] args) {
-        System.out.println(damage(5));
-        displayWarrior();
+        System.out.println(fight());
 
 
     }
