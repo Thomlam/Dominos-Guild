@@ -4,10 +4,6 @@ import java.util.Scanner;
 
 public class Fight extends Game_Main {
 
-    private static String name = "Pradish";
-    private static int health = 50;
-    private static int damage = 5;
-    private static int speed = 5;
     private static String j1_name;
     private static String j1_archetype;
     private static int j1_health = 50;
@@ -80,10 +76,10 @@ public class Fight extends Game_Main {
 
     public static void choice() {
 
-        System.out.println("Joueur 1 choisit le nom de son combattant ");
+        System.out.println("Player 1 select his brawler ");
         Scanner sc = new Scanner(System.in);
         String name = sc.nextLine();
-        System.out.println("Vous avez entré : " + name);
+        System.out.println("You have selected : " + name);
         j1_name = name;
         System.out.println("Player 1 select his class (Warrior/Mage/Thief)");
         Scanner sc3 = new Scanner(System.in);
@@ -97,10 +93,10 @@ public class Fight extends Game_Main {
         j1_archetype = archetype;
 
 
-        System.out.println("Joueur 2 choisit le nom de son combattant ");
+        System.out.println("Player 2 select his brawler ");
         Scanner sc2 = new Scanner(System.in);
         String name2 = sc2.nextLine();
-        System.out.println("Vous avez entré : " + name2);
+        System.out.println("You have selected : " + name2);
         j2_name = name2;
         System.out.println("Player 1 select his class (Warrior/Mage/Thief)");
         Scanner sc4 = new Scanner(System.in);
