@@ -69,7 +69,7 @@ public class Fight extends Game_Menu {
         TestCharacterList.CharacterList();
         int player = scanner.nextInt();
         for(int i = 0; i < TestCharacterList.grosslist.size(); i++) {
-            /*if(player == TestCharacterList.grosslist.indexOf(TestCharacterList.grosslist.get(i))) {
+            if(player == TestCharacterList.grosslist.indexOf(TestCharacterList.grosslist.get(i))) {
                 j1_name = TestCharacterList.grosslist[i][0];
                 j1_archetype = TestCharacterList.grosslist[i][1];
                 j1_health = TestCharacterList.grosslist[i][2];
@@ -86,7 +86,7 @@ public class Fight extends Game_Menu {
                     j1_critRate = TestCharacterList.grosslist[i][6];
                 }
 
-            }*/
+            }
         }
         System.out.println("Player 2 select his brawler in the list");
         Scanner sc2 = new Scanner(System.in);
