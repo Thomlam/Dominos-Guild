@@ -11,8 +11,7 @@ public class Warrior extends Character{
 
     public static int damage(int opponentDamage) {
         int health = getHealth();
-        int attack = opponentDamage - getDefense();
-        health = getHealth() - attack;
+        health = getHealth() - (opponentDamage - getDefense());
         return health;
     }
 

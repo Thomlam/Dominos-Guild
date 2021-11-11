@@ -9,34 +9,73 @@ public class Fight extends Game_Main {
     private static int damage = 5;
     private static int speed = 5;
     private static String j1_name;
-    private static int j1_health;
-    private static int j1_damage;
-    private static int j1_speed;
+    private static String j1_archetype;
+    private static int j1_health = 50;
+    private static int j1_damage = 5;
+    private static int j1_speed = 5;
+    private static int j1_defense = 0;
+    private static int j1_magicalAttack = 0;
+    private static int j1_dodge = 0;
+    private static int j1_critRate = 0;
     private static String j2_name;
-    private static int j2_health;
-    private static int j2_damage;
-    private static int j2_speed;
+    private static String j2_archetype;
+    private static int j2_health = 50;
+    private static int j2_damage = 5;
+    private static int j2_speed = 5;
+    private static int j2_defense = 0;
+    private static int j2_magicalAttack = 0;
+    private static int j2_dodge = 0;
+    private static int j2_critRate = 0;
 
-
-    public static String getName() {
-        return name;
+    public static int magicAttack(int magicalAttack ) {
+        if (magicalAttack%2 == 0) { magicalAttack = (magicalAttack / 2); }
+        else { magicalAttack = ((magicalAttack - 1) / 2); }
+        return magicalAttack;
     }
 
-    public static int getHealth() {
-        return health;
-    }
+    public static String getJ1_archetype() { return j1_archetype; }
+    public static String getJ2_archetype() { return j2_archetype; }
+    public static String getJ1_name() { return j1_name; }
+    public static int getJ1_health() { return j1_health; }
+    public static int getJ1_damage() { return j1_damage; }
+    public static int getJ1_speed() { return j1_speed; }
+    public static int getJ1_defense() { return j1_defense; }
+    public static int getJ1_magicalAttack() { return j1_magicalAttack; }
+    public static int getJ1_critRate() { return j1_critRate; }
+    public static int getJ1_dodge() { return j1_dodge; }
 
-    public static int getDamage() {
-        return damage;
-    }
+    public static String getJ2_name() { return j2_name; }
+    public static int getJ2_health() { return j2_health; }
+    public static int getJ2_damage() { return j2_damage; }
+    public static int getJ2_speed() { return j2_speed; }
+    public static int getJ2_defense() { return j2_defense; }
+    public static int getJ2_magicalAttack() { return j2_magicalAttack; }
+    public static int getJ2_dodge() { return j2_dodge; }
+    public static int getJ2_critRate() { return j2_critRate; }
 
-    public static int getSpeed() {
-        return speed;
-    }
+    public static int takeDamage(int opponentDamage, int characterHealth, int characterdefense, int magicalAttack) {
 
-    public static int takeDamage(int opponentDamage, int characterHealth) {
-        characterHealth -= opponentDamage;
+        if ((opponentDamage + magicalAttack) > characterdefense) {
+            characterHealth -= ((opponentDamage + magicalAttack) - characterdefense);
+        }   else   {
+            System.out.println("The shield have absorbed all damages");
+        }
+        magicalAttack = magicAttack(magicalAttack); // the function change the attack for a magician (reduce per 2 the magicalattack)
+
         return characterHealth;
+    }
+
+    private static void classValues(String archetype) {
+        if(archetype == "Warrior") {
+            j1_defense = 2;
+        }
+        else if(archetype == "Mage") {
+            j1_magicalAttack = 12;
+        }
+        else if(archetype == "Thief") {
+            j1_dodge = 20;
+            j1_critRate = 20;
+        }
     }
 
     public static void choice() {
@@ -46,18 +85,33 @@ public class Fight extends Game_Main {
         String name = sc.nextLine();
         System.out.println("Vous avez entré : " + name);
         j1_name = name;
-        j1_health = health;
-        j1_damage = damage;
-        j1_speed = speed;
+        System.out.println("Player 1 select his class (Warrior/Mage/Thief)");
+        Scanner sc3 = new Scanner(System.in);
+        String archetype = sc3.nextLine();
+        while(archetype != "Warrior" && archetype != "Mage" && archetype != "Thief") {
+            System.out.println("Wrong Class. Player 1 select his class (Warrior/Mage/Thief)");
+            archetype = sc3.nextLine();
+        }
+        classValues(archetype);
+        System.out.println("You have selected : " + archetype);
+        j1_archetype = archetype;
+
 
         System.out.println("Joueur 2 choisit le nom de son combattant ");
         Scanner sc2 = new Scanner(System.in);
         String name2 = sc2.nextLine();
         System.out.println("Vous avez entré : " + name2);
         j2_name = name2;
-        j2_health = health;
-        j2_damage = damage;
-        j2_speed = speed;
+        System.out.println("Player 1 select his class (Warrior/Mage/Thief)");
+        Scanner sc4 = new Scanner(System.in);
+        String archetype2 = sc4.nextLine();
+        while(archetype2 != "Warrior" && archetype2 != "Mage" && archetype2 != "Thief") {
+            System.out.println("Wrong Class. Player 1 select his class (Warrior/Mage/Thief)");
+            archetype2 = sc4.nextLine();
+        }
+        classValues(archetype2);
+        System.out.println("You have selected : " + archetype2);
+        j2_archetype = archetype2;
 
     }
 
@@ -77,22 +131,26 @@ public class Fight extends Game_Main {
 
                 if (j1_speed >= j2_speed) { // used to know if it's gonna be the first player who will play first
                     if (turn) {
-                        j2_health = takeDamage(j1_damage, j2_health);
+                        j2_health = takeDamage(j1_damage, j2_health, j2_defense, magicAttack(j1_magicalAttack));
+                        j1_magicalAttack = magicAttack(j1_magicalAttack);
                         turn = false;
                     }
                     else {
-                        j1_health = takeDamage(j2_damage, j1_health);
+                        j1_health = takeDamage(j2_damage, j1_health, j1_defense, magicAttack(j2_magicalAttack));
+                        j2_magicalAttack = magicAttack(j2_magicalAttack);
                         turn = true;
                     }
 
                 }
                 else {  //  used to know if it's gonna be the second player who will play first
                     if (turn) {
-                        j1_health = takeDamage(j2_damage, j1_health);
+                        j1_health = takeDamage(j2_damage, j1_health, j1_defense, magicAttack(j2_magicalAttack));
+                        j2_magicalAttack = magicAttack(j2_magicalAttack);
                         turn = false;
                     }
                     else {
-                        j2_health = takeDamage(j1_damage, j2_health);
+                        j2_health = takeDamage(j1_damage, j2_health, j2_defense, magicAttack(j1_magicalAttack));
+                        j1_magicalAttack = magicAttack(j1_magicalAttack);
                         turn = true;
                     }
                 }
