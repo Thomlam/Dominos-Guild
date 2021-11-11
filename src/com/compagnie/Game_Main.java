@@ -1,4 +1,2 @@
-package com.compagnie;
-
-public class Game_Main {
+public class Game_Main extends Game_Menu {
 }
