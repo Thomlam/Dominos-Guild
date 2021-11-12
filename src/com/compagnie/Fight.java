@@ -65,6 +65,7 @@ public class Fight extends Game_Menu {
 
     public static void choice() {
 
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Player 1 select his brawler in the list");

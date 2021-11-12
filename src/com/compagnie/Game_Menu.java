@@ -1,4 +1,6 @@
 package com.compagnie;
+import javax.sound.midi.Soundbank;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 
@@ -25,47 +27,59 @@ public class Game_Menu extends Main{
 
         return choix;
     }
-    public static void rules() { //Fonction pour les règles
-
-
+    public static void rules() { // Function for the rules
+        System.out.println("◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊");
+        System.out.println("◊                                                   WELCOME IN THE RULES MENU                                                                                      ◊");
+        System.out.println("◊                                                                                                                                                                  ◊");
+        System.out.println("◊  Domino's Guild is a kind of RPG game (Role Play Game), that means that you can create characters with different classes to make them fights against each others ◊");
+        System.out.println("◊                                                                                                                                                                  ◊");
+        System.out.println("◊   ∆ CLASSES:                                                                                                                                                     ◊");
+        System.out.println("◊  •MAGE, a weak character who deal a lot of damages in short fights               ◊  •WARRIOR, a strong character who can absorb a lot of damages with his shield ◊");
+        System.out.println("◊  Info: He have bonus with a magical attack in addition of the normal attack      ◊   Info: He have shield that provide him a shield that can block a part of the ◊");
+        System.out.println("◊  the magical attack is divided per 2                                             ◊   the enemy attacks (1 damage less for each shield point )                    ◊");
+        System.out.println("◊  ›  Default:    HP:50    Attack:5    Speed:5    MagicalAttack:12                 ◊    ›  Default: HP:50    Attack:5    Speed:5    Shield:5                        ◊");
+        System.out.println("◊                                                                                                                                                                  ◊");
+        System.out.println("◊  •THIEF, a stealthy character who can dodge enemies attack or deal extra damages ◊                                                                               ◊");
+        System.out.println("◊  Info: He have a chance to avoid all damages from an enemy attack and he have a  ◊                                                                               ◊");
+        System.out.println("◊  chance do deal the double of damages in one hit                                 ◊                                                                               ◊");
+        System.out.println("◊  ›  Default:   HP:50    Attack:5    Speed:5    crit rate:25%     dodge rate:25%  ◊                                                                               ◊");
+        System.out.println("◊                                                                                                                                                                 ◊");
+        System.out.println("◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊");
     }
 
-    public static void scores() { //Fonction pour les scores
-
-
-    }
+   // public static void scores() { // Function for the score
+   //
+   // }
 
     public static void start() { // Function for the game
          Fight.fight();
     }
 
-    public static void character() { //Fonction pour le jeu
+    public static void character() { // Function for the characters
         int choix;
-        int choix2;
+        int optionNumber2;
         choix = VerifCheck();
 
         switch (choix) {
-            //Choix numéro 1
+
             case 1:
                 System.out.println("Create-Player");
                 TestCharacterList.createcharacter();
-                // Déterminer si on continue dans le jeu ou l'on retourne au menu
-                System.out.println("Choisir 0 pour retourner au menu principal.");
-                choix2 = VerifCheck();
-                ReturnOrNot(choix2);
+                    // Verification to continue the program or return to main menu
+                System.out.println("Select 0 to return at the main menu.");
+                optionNumber2 = VerifCheck();
+                ReturnOrNot(optionNumber2);
                 System.out.println("Exit game ");
-
                 break;
 
-
-            //Choix numéro 2
             case 2:
                 System.out.println("List-Player");
                 TestCharacterList.ListPrint();
 
-                // Déterminer si on continue dans l'affichage du score ou l'on retourne au menu
-                choix2 = VerifCheck();
-                ReturnOrNot(choix2);
+                // Verify if we have to continue to display the score or return to the main menu
+                
+                optionNumber2 = VerifCheck();
+                ReturnOrNot(optionNumber2);
                 System.out.println("Exit scoring");
                 break;
 
@@ -91,9 +105,7 @@ public class Game_Menu extends Main{
                 System.out.println("Exit scoring");
                 break;
 
-
-
-            // Choix par défault si le choix est diffèrent des choix proposés auparavant//
+            // default option if "no one/ good one" has been selected
             default:
                 System.out.println("Error, Restart input");
                 MenuChest();
@@ -105,55 +117,50 @@ public class Game_Menu extends Main{
 
         System.out.println("1:Start Game");
         System.out.println();
-        System.out.println("2: Draw Scoring");
+        System.out.println("2: Display Scoring");
         System.out.println();
-        System.out.println("3:Draw Rules");
+        System.out.println("3: Display Rules");
         System.out.println();
         System.out.println("4: Start Character Menu");
         System.out.println();
         System.out.println("5: Exit Game");
 
 
-        int choix; // Variable de type entier qui prend en compte le premier choix de l'utilisateur
-        int choix2;// Variable de type entier qui prend en compte le deuxième choix de l'utilisateur
+        int firstcase; // An integer who take in consideration the first choice of the user
+        int Secondcase; // ----------------------------------- the second choice of the user
 
-        choix = VerifCheck();
+        firstcase = VerifCheck();
 
 
-        switch (choix) {
-            //Choix numéro 1
+        switch (firstcase) {
             case 1:
-                System.out.println("Démarrer le jeu");
+                System.out.println("Start the game");
                 start();
 
-                // Déterminer si on continue dans le jeu ou l'on retourne au menu
+                // Verification to continue the program or return to main menu
                 System.out.println("Choisir 0 pour retourner au menu principal.");
-                choix2 = VerifCheck();
-                ReturnOrNot(choix2);
+                Secondcase = VerifCheck();
+                ReturnOrNot(Secondcase);
                 System.out.println("Exit game ");
 
                 break;
 
-
-            //Choix numéro 2
             case 2:
                 System.out.println("Scores");
 
 
-                // Déterminer si on continue dans l'affichage du score ou l'on retourne au menu
-                choix2 = VerifCheck();
-                ReturnOrNot(choix2);
+                // Verification to continue the program or return to main menu
+                Secondcase = VerifCheck();
+                ReturnOrNot(Secondcase);
                 System.out.println("Exit scoring");
                 break;
 
-
-            //Choix numéro 3
             case 3:
                 System.out.println("Rules");
                 rules();
 
-                choix2 = VerifCheck();
-                ReturnOrNot(choix2);
+                Secondcase = VerifCheck();
+                ReturnOrNot(Secondcase);
                 System.out.println("Exit Rules");
                 break;
 
@@ -163,20 +170,17 @@ public class Game_Menu extends Main{
                 System.out.println("Press 3 for show list character");
 
                 character();
-                choix2 = VerifCheck();
-                ReturnOrNot(choix2);
+                Secondcase = VerifCheck();
+                ReturnOrNot(Secondcase);
                 System.out.println("Exit Rules");
                 break;
 
-
-
-            //Choix numéro 4//
             case 5:
                 System.out.println("Bye.");
                 System.exit(1);
                 break;
 
-            // Choix par défault si le choix est diffèrent des choix proposés auparavant//
+                // default parameter if the "firstcase" is different of  "firstcase" entered before//
             default:
                 System.out.println("Error, Restart input");
                 MenuChest();
@@ -184,13 +188,9 @@ public class Game_Menu extends Main{
         }
     }
 
-
     public static void main() {
 
         MenuChest();
     }
-
-
-
 
 }
