@@ -1,5 +1,7 @@
 package com.compagnie;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Fight extends Game_Menu {
@@ -66,43 +68,54 @@ public class Fight extends Game_Menu {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Player 1 select his brawler in the list");
-        TestCharacterList.CharacterList();
+        TestCharacterList.ListPrint();
         int player = scanner.nextInt();
-        for(int i = 0; i < TestCharacterList.grosslist.size(); i++) {
-            if(player == TestCharacterList.grosslist.indexOf(TestCharacterList.grosslist.get(i))) {
-                j1_name = TestCharacterList.grosslist[i][0];
-                j1_archetype = TestCharacterList.grosslist[i][1];
-                j1_health = TestCharacterList.grosslist[i][2];
-                j1_damage = TestCharacterList.grosslist[i][3];
-                j1_speed = TestCharacterList.grosslist[i][4];
-                if(TestCharacterList.getArchetype().equals("Warrior")) {
-                    j1_defense = TestCharacterList.grosslist[i][5];
-                }
-                if(TestCharacterList.getArchetype().equals("Mage")) {
-                    j1_magicalAttack = TestCharacterList.grosslist[i][5];
-                }
-                if(TestCharacterList.getArchetype().equals("Thief")) {
-                    j1_dodge = TestCharacterList.grosslist[i][5];
-                    j1_critRate = TestCharacterList.grosslist[i][6];
-                }
 
+        for(int i = 0; i < TestCharacterList.grosslist.size(); i++) {
+            if(player == i) {
+                List littleList = (List) TestCharacterList.grosslist.get(i);
+                j1_name = (String) littleList.get(0);
+                j1_archetype = (String) littleList.get(1);
+                j1_health = (int) littleList.get(2);
+                j1_damage = (int) littleList.get(3);
+                j1_speed = (int) littleList.get(4);
+
+                if(TestCharacterList.classValues().equals("Warrior")) {
+                    j1_defense = (int) littleList.get(5);
+                }
+                if(TestCharacterList.classValues().equals("Mage")) {
+                    j1_magicalAttack = (int) littleList.get(5);
+                }
+                if(TestCharacterList.classValues().equals("Thief")) {
+                    j1_dodge = (int) littleList.get(5);
+                    j1_critRate = (int) littleList.get(6);
+                }
             }
         }
-        System.out.println("Player 2 select his brawler in the list");
-        Scanner sc2 = new Scanner(System.in);
-        String name2 = sc2.nextLine();
-        System.out.println("You have selected : " + name2);
-        j2_name = name2;
-        System.out.println("Player 1 select his class (Warrior/Mage/Thief)");
-        Scanner sc4 = new Scanner(System.in);
-        String archetype2 = sc4.nextLine();
-        while(archetype2 != "Warrior" && archetype2 != "Mage" && archetype2 != "Thief") {
-            System.out.println("Wrong Class. Player 1 select his class (Warrior/Mage/Thief)");
-            archetype2 = sc4.nextLine();
-        }
-        System.out.println("You have selected : " + archetype2);
-        j2_archetype = archetype2;
 
+        System.out.println("Player 2 select his brawler in the list");
+        TestCharacterList.ShowList();
+        int player2 = scanner.nextInt();
+        for(int i = 0; i < TestCharacterList.grosslist.size(); i++) {
+            if(player2 == i) {
+                List littleList = (List) TestCharacterList.grosslist.get(i);
+                j2_name = (String) littleList.get(0);
+                j2_archetype = (String) littleList.get(1);
+                j2_health = (int) littleList.get(2);
+                j2_damage = (int) littleList.get(3);
+                j2_speed = (int) littleList.get(4);
+                if(TestCharacterList.classValues().equals("Warrior")) {
+                    j2_defense = (int) littleList.get(5);
+                }
+                if(TestCharacterList.classValues().equals("Mage")) {
+                    j2_magicalAttack = (int) littleList.get(5);
+                }
+                if(TestCharacterList.classValues().equals("Thief")) {
+                    j2_dodge = (int) littleList.get(5);
+                    j2_critRate = (int) littleList.get(6);
+                }
+            }
+        }
     }
 
     public static String fight() {
@@ -152,10 +165,10 @@ public class Fight extends Game_Menu {
             System.out.println("Hp :" + j2_health);
         }
         if(j1_health <= 0) {
-            return j2_name + " won the game ";
+            return j2_archetype + j2_name + " won the game ";
         }
         if(j2_health <= 0) {
-            return j1_name + " won the game";
+            return j1_archetype + j1_name + " won the game";
         }
         return "Pradish is my new waifu <3 <3 <3";
     }

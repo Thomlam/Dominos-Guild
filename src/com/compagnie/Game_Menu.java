@@ -35,9 +35,8 @@ public class Game_Menu extends Main{
 
     }
 
-    public static void start() { //Fonction pour le jeu
-
-        TestCharacterList.main();
+    public static void start() { // Function for the game
+         Fight.fight();
     }
 
     public static void character() { //Fonction pour le jeu
@@ -67,6 +66,28 @@ public class Game_Menu extends Main{
                 // Déterminer si on continue dans l'affichage du score ou l'on retourne au menu
                 choix2 = VerifCheck();
                 ReturnOrNot(choix2);
+                System.out.println("Exit scoring");
+                break;
+
+            case 3:
+                System.out.println("ShowPlayer");
+                TestCharacterList.ShowList();
+
+                // Verify if we have to continue to display the score or return to the main menu
+
+                optionNumber2 = VerifCheck();
+                ReturnOrNot(optionNumber2);
+                System.out.println("Exit scoring");
+                break;
+
+            case 4:
+                System.out.println("Delete Character");
+               // TestCharacterList.De();
+
+                // Verify if we have to continue to display the score or return to the main menu
+
+                optionNumber2 = VerifCheck();
+                ReturnOrNot(optionNumber2);
                 System.out.println("Exit scoring");
                 break;
 
@@ -117,7 +138,7 @@ public class Game_Menu extends Main{
             //Choix numéro 2
             case 2:
                 System.out.println("Scores");
-                scores();
+
 
                 // Déterminer si on continue dans l'affichage du score ou l'on retourne au menu
                 choix2 = VerifCheck();
@@ -139,6 +160,8 @@ public class Game_Menu extends Main{
             case 4:
                 System.out.println("Press 1 for create character");
                 System.out.println("Press 2 for see list character");
+                System.out.println("Press 3 for show list character");
+
                 character();
                 choix2 = VerifCheck();
                 ReturnOrNot(choix2);
@@ -150,6 +173,7 @@ public class Game_Menu extends Main{
             //Choix numéro 4//
             case 5:
                 System.out.println("Bye.");
+                System.exit(1);
                 break;
 
             // Choix par défault si le choix est diffèrent des choix proposés auparavant//

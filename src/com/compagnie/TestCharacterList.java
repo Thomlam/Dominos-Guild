@@ -4,21 +4,20 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TestCharacterList extends Character {
-    private static String pseudo;
+    private static String pseudo = getName();
 
     public static List grosslist = new ArrayList();
 
-    private static String classVerif () {
+    private static String classVerif() {
         String archetype;
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose the class");
         archetype = scanner.nextLine();
         System.out.println(archetype);
-        if(archetype.equals("Warrior") || archetype.equals("Mage") || archetype.equals("Thief")) {
+        if (archetype.equals("Warrior") || archetype.equals("Mage") || archetype.equals("Thief")) {
             return archetype;
-        }
-        else {
+        } else {
             classVerif();
             return "";
         }
@@ -29,6 +28,7 @@ public class TestCharacterList extends Character {
 
     public static void createcharacter() {
 
+        int check = 0;
         String name = getName();
         int health = getHealth();
         int damage = getDamage();
@@ -36,10 +36,10 @@ public class TestCharacterList extends Character {
 
         Scanner scanner = new Scanner(System.in);
 
-        List indexplace = new ArrayList();
+
 
         System.out.println("Choose the name");
-        name = scanner.nextLine();
+        pseudo= name = scanner.nextLine();
         String archetype = classVerif();
         classValues(archetype);
         System.out.println("Choose the health");
@@ -54,20 +54,71 @@ public class TestCharacterList extends Character {
         indexplace.add(health);
         indexplace.add(damage);
         indexplace.add(speed);
-        if(archetype.equals("Warrior")) {
-            indexplace.add(Warrior.getDefense());
+
+        if (archetype.equals("Warrior")) {
+            System.out.println("Choose the defense");
+
+            while ( check == 3) {
+                try {
+                    defense = scanner.nextInt();
+                    check = 4;
+                }
+                catch (Exception e) {
+                    defense = scanner.nextInt();
+                }
+            }
+
+            indexplace.add(defense);
         }
-        if(archetype.equals("Mage")) {
-            indexplace.add(Mage.getMagicDamage());
+
+        if (archetype.equals("Mage")) {
+            System.out.println("Choose the magic damage");
+
+            while (check == 3) {
+                try {
+                    magicDamage = scanner.nextInt();
+                }
+                catch (Exception e) {
+                    magicDamage = scanner.nextInt();
+                }
+            }
+
+            indexplace.add(magicDamage);
         }
-        if(archetype.equals("Thief")) {
-            indexplace.add(Thief.getDodge());
-            indexplace.add(Thief.getDodge());
+
+        if (archetype.equals("Thief")) {
+            System.out.println("Choose the dodge rate");
+
+            while ( check == 3) {
+                try {
+                    dodge = scanner.nextInt();
+                    check = 4;
+                }
+                catch (Exception e) {
+                    dodge = scanner.nextInt();
+                }
+            }
+
+            System.out.println("Choose the critical rate");
+
+            while (check == 4) {
+                try {
+                    critRate = scanner.nextInt();
+                    check = 5;
+                }
+                catch (Exception e) {
+                    critRate = scanner.nextInt();
+                }
+            }
+
+            indexplace.add(critRate);
+            indexplace.add(dodge);
         }
+
 
         System.out.println(indexplace);
         grosslist.add(indexplace);
-        CharacterList();
+
 
     }
 
@@ -75,10 +126,26 @@ public class TestCharacterList extends Character {
         System.out.println(grosslist);
     }
 
-    public static void CharacterList() {
 
 
+    public static void ShowList() {
+        for (int i = 0; i < grosslist.size(); i++) {
+            System.out.println("Personnage " + (i + 1) + " index :" + (i+1));
 
+
+        }
+    }
+    public static void DeletedCharacter(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter index for delete ");
+
+        for (int i = 0; i < grosslist.size(); i++) {
+           int index = scanner.nextInt();
+           grosslist.get(index - 1);
+           grosslist.remove(index -1);
+
+
+        }
     }
 }
 

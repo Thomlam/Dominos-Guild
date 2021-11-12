@@ -1,7 +1,7 @@
 package com.compagnie;
 
 public class Character {
-    private static String archetype;
+    private static String archetype = "Pradish";
     private static String name = "Pradish";         // this is a super name
     private static int health = 50;
     private static int damage = 5;
@@ -9,10 +9,6 @@ public class Character {
 
     public static String getName() {
         return name;
-    }
-
-    public static String getArchetype() {
-        return archetype;
     }
 
     public static int getHealth() { return health; }
