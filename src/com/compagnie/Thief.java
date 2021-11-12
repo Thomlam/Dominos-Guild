@@ -2,8 +2,8 @@ package com.compagnie;
 
 public class Thief extends Character{
     private static String archetype = "Thief";
-    private static int dodge = 25;
-    private static int criticalHit = 35;
+    private static int dodge = 100;
+    private static int criticalHit = 100;
 
     public static String getArchetype() { return archetype; }
 
@@ -15,14 +15,14 @@ public class Thief extends Character{
         return criticalHit;
     }
 
-    public static int Damage(int opponentDamage) {
+    public static int Damage(int opponentDamage, int charDodge, int charHealth) {
 
-        if (Math.random() * 100 > getDodge()) {
-            return getHealth();
+        if (Math.random() * 100 < charDodge) {
+            return charHealth;
         }
 
         else {
-            return getHealth() - opponentDamage;
+            return charHealth - opponentDamage;
         }
     }
 

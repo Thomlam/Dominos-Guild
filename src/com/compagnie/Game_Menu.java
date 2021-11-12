@@ -107,7 +107,7 @@ public class Game_Menu extends Main{
 
             // default option if "no one/ good one" has been selected
             default:
-                System.out.println("Error, Restart input");
+                System.out.println("Error, (incorrect value entered) can you input a new value :");
                 MenuChest();
                 break;
         }
@@ -165,9 +165,9 @@ public class Game_Menu extends Main{
                 break;
 
             case 4:
-                System.out.println("Press 1 for create character");
-                System.out.println("Press 2 for see list character");
-                System.out.println("Press 3 for show list character");
+                System.out.println("Press 1 to create character");
+                System.out.println("Press 2 to see list character");
+                System.out.println("Press 3 to show list character");
 
                 character();
                 Secondcase = VerifCheck();

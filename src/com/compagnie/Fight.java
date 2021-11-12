@@ -15,6 +15,7 @@ public class Fight extends Game_Menu {
     private static int j1_magicalAttack = 0;
     private static int j1_dodge = 0;
     private static int j1_critRate = 0;
+
     private static String j2_name;
     private static String j2_archetype;
     private static int j2_health = 50;
@@ -90,8 +91,27 @@ public class Fight extends Game_Menu {
 
         System.out.println("The pizza power is send to every fighter. Pray the Pizza god.");
         System.out.println("Turn n°" + numberturn);
-        System.out.println(j1_name + ":" + j2_name + ":");
-        System.out.println("HP :" + j1_health + "HP :" + j2_health);
+
+        System.out.print(j1_name);
+        for (int numberofspaces = 0 ; numberofspaces < j2_name.length(); numberofspaces++) {
+            System.out.print(" ");
+        }
+        System.out.print("HP : " + j1_health);
+        System.out.println("");
+
+        System.out.print(j2_name);
+        for (int numberofspaces = 0 ; numberofspaces < j1_name.length(); numberofspaces++) {
+            System.out.print(" ");
+        }
+        System.out.print("HP : " + j2_health);
+        System.out.println("");
+
+        if(j1_health <= 0) {
+            return j2_archetype + j2_name + " won the game ";
+        }
+        if(j2_health <= 0) {
+            return j1_archetype + j1_name + " won the game";
+        }
 
         while (j1_health >= 1 && j2_health >= 1) {  // used to make characters fight until one die
 
