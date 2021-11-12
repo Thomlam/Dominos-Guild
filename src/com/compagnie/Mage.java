@@ -13,13 +13,13 @@ public class Mage extends Character{
         return archetype;
     }
 
-    public static int magicAttack(int opponentHealth) {
-        int damage = opponentHealth - (getDamage() + getMagicDamage());
-        if (getMagicDamage() % 2 == 1) {
-            magicDamage = getMagicDamage() - 1;
+    public static int magicAttack(int opponentHealth, int charDamage, int charMagicDamage) {
+        int damage = opponentHealth - (charDamage + charMagicDamage);
+        if (charMagicDamage % 2 == 1) {
+            charMagicDamage = (charMagicDamage / 2) - 1;
         }
         else {
-            magicDamage = getMagicDamage() / 2;
+            charMagicDamage = charMagicDamage / 2;
         }
         return damage;
     }

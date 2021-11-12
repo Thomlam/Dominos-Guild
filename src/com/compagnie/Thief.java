@@ -26,15 +26,15 @@ public class Thief extends Character{
         }
     }
 
-    public static int CriticalDamage(int opponentHealth) {
+    public static int CriticalDamage(int opponentHealth, int charDamage, int charCritRate) {
 
-        if(Math.random() * 100 < getCriticalHit()) {
-            criticalHit = 0;
-            return opponentHealth - (getDamage() * 2);
-        } else {
-            criticalHit = 35;
-            return opponentHealth - getDamage();
-        }
+            if (Math.random() * 100 < charCritRate) {
+
+                return opponentHealth - (charDamage * 2);
+            } else {
+                return opponentHealth - charDamage;
+            }
+
     }
 
     public static void displayThief() {

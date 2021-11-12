@@ -21,8 +21,8 @@ public class Character {
         return speed;
     }
 
-    public int takeDamage(int opponentDamage) {
-        int characterHealth = getHealth() - opponentDamage;
+    public static int takeDamage(int damage, int opponentHealth) {
+        int characterHealth = opponentHealth - damage;
         return characterHealth;
     }
 

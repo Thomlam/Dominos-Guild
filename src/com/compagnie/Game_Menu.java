@@ -96,7 +96,7 @@ public class Game_Menu extends Main{
 
             case 4:
                 System.out.println("Delete Character");
-               // TestCharacterList.De();
+                TestCharacterList.DeletedCharacter();
 
                 // Verify if we have to continue to display the score or return to the main menu
 

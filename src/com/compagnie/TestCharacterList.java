@@ -90,59 +90,22 @@ public class TestCharacterList extends Character {
 
         if (archetype.equals("Warrior")) {
             System.out.println("Choose the defense");
-
-            while ( check == 3) {
-                try {
-                    defense = scanner.nextInt();
-                    check = 4;
-                }
-                catch (Exception e) {
-                    defense = scanner.nextInt();
-                }
-            }
-
+            defense = scanner.nextInt();
             indexplace.add(defense);
         }
 
         if (archetype.equals("Mage")) {
             System.out.println("Choose the magic damage");
-
-            while (check == 3) {
-                try {
-                    magicDamage = scanner.nextInt();
-                }
-                catch (Exception e) {
-                    magicDamage = scanner.nextInt();
-                }
-            }
+            magicDamage = scanner.nextInt();
 
             indexplace.add(magicDamage);
         }
 
         if (archetype.equals("Thief")) {
             System.out.println("Choose the dodge rate");
-
-            while ( check == 3) {
-                try {
-                    dodge = scanner.nextInt();
-                    check = 4;
-                }
-                catch (Exception e) {
-                    dodge = scanner.nextInt();
-                }
-            }
-
+            dodge = scanner.nextInt();
             System.out.println("Choose the critical rate");
-
-            while (check == 4) {
-                try {
-                    critRate = scanner.nextInt();
-                    check = 5;
-                }
-                catch (Exception e) {
-                    critRate = scanner.nextInt();
-                }
-            }
+            critRate = scanner.nextInt();
 
             indexplace.add(critRate);
             indexplace.add(dodge);
