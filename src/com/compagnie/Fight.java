@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Fight extends Game_Menu {
+public class Fight extends Character {
 
     private static String j1_name;
     private static String j1_archetype;
@@ -213,6 +213,7 @@ public class Fight extends Game_Menu {
                         }
                         turn = false;
                     }
+
                     else {
                         if(j1_archetype.equals("Warrior")) {
                             if (j2_archetype.equals("Thief")){
@@ -244,26 +245,36 @@ public class Fight extends Game_Menu {
                         }
                         turn = true;
                     }
+
                 }
             numberturn += 1;
             if(numberturn % 2 == 0) {
                 System.out.println("Pizza god likes the fight. He gave +2 motivation to everyone.");
             }
+
             else {
                 System.out.println("Pizza god want more tomato sauce.");
             }
             System.out.println("");
             System.out.println("Turn n°" + numberturn);
-            System.out.println(j1_name + "  HP :" + j1_health);
-            System.out.println(j2_name + "  HP :" + j2_health);
+
+            System.out.print(j1_name);
+            for (int numberofspaces = 0 ; numberofspaces < j2_name.length(); numberofspaces++) {
+                System.out.print(" ");
+            }
+            System.out.print("HP : " + j1_health);
+            System.out.println("");
+
+            System.out.print(j2_name);
+            for (int numberofspaces = 0 ; numberofspaces < j1_name.length(); numberofspaces++) {
+                System.out.print(" ");
+            }
+            System.out.print("HP : " + j2_health);
+            System.out.println("");
+
         }
-        if(j1_health <= 0) {
-            return j2_archetype + j2_name + " won the game ";
-        }
-        if(j2_health <= 0) {
-            return j1_archetype + j1_name + " won the game";
-        }
-        return "Pradish is my new waifu <3 <3 <3";
+
+        return "Pradish won the game";
     }
 
 }
