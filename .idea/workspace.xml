@@ -2,35 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="492e6ae1-85c3-47ec-91ac-ea6aece02c70" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dominos-Guild.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dominos-Guild/Character.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dominos-Guild/Fight.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dominos-Guild/Game_Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dominos-Guild/Game_Menu.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dominos-Guild/Item.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dominos-Guild/Mage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dominos-Guild/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dominos-Guild/TestCharacterList.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dominos-Guild/Thief.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dominos-Guild/Warrior.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/compagnie/Game_Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/compagnie/TestCharacterList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dominos-Guild/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dominos-Guild/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dominos-Guild/Game_Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dominos-Guild/Game_Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dominos-Guild/TestCharacterList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dominos-Guild/TestCharacterList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dominos-Guild/Warrior.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dominos-Guild/Warrior.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/compagnie/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/compagnie/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/compagnie/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/compagnie/Fight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/compagnie/Game_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/compagnie/Game_Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/compagnie/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/compagnie/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/compagnie/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/compagnie/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/compagnie/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/compagnie/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/compagnie/Thief.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/compagnie/Thief.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/compagnie/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/compagnie/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/compagnie/Game_Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/compagnie/Game_Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/compagnie/TestCharacterList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/compagnie/TestCharacterList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +71,7 @@
       <updated>1636623003251</updated>
       <workItem from="1636623004871" duration="53000" />
       <workItem from="1636623069808" duration="1390000" />
-      <workItem from="1636637462420" duration="12323000" />
+      <workItem from="1636637462420" duration="16118000" />
     </task>
     <servers />
   </component>

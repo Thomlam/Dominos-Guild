@@ -68,6 +68,17 @@ public class Game_Menu extends Main{
                 System.out.println("Exit scoring");
                 break;
 
+            case 3:
+                System.out.println("CharacterList");
+                TestCharacterList.ShowCharacterList();
+
+                // Déterminer si on continue dans l'affichage du score ou l'on retourne au menu
+                choix2 = VerifCheck();
+                ReturnOrNot(choix2);
+                System.out.println("Exit scoring");
+                break;
+
+
 
 
             // Choix par défault si le choix est diffèrent des choix proposés auparavant//

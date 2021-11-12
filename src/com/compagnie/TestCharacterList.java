@@ -32,7 +32,6 @@ public class TestCharacterList extends Character {
         indexplace.add(speed);
         System.out.println(indexplace);
         grosslist.add(indexplace);
-        CharacterList();
 
 
 
@@ -42,12 +41,17 @@ public class TestCharacterList extends Character {
         System.out.println(grosslist);
     }
 
-    public static void CharacterList() {
 
 
+    public static void ShowCharacterList() {
+        for (int i = 0; i < grosslist.size(); i++){
+            System.out.println("Personnage 1 :" + i );
 
+        }
     }
 }
+
+
 
 
 

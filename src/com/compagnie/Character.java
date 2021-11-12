@@ -6,6 +6,7 @@ public class Character {
      static int damage ;
      static int speed ;
 
+
     public static String getName() {
         return name;
     }
