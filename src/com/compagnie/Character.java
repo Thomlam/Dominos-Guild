@@ -27,7 +27,8 @@ public class Character {
     }
 
 
-    public static void classValues(String archetype) {
+    public static String classValues() {
+
         if(archetype == "Warrior") {
             int defense = Warrior.getDefense();
         }
@@ -38,6 +39,7 @@ public class Character {
             int dodge = Thief.getDodge();
             int critRate = Thief.getCriticalHit();
         }
+        return archetype;
     }
 
     public static void displayStats() {

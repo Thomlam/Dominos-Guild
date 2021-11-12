@@ -53,9 +53,10 @@ public class Fight extends Game_Menu {
 
     public static int takeDamage(int opponentDamage, int characterHealth, int characterdefense, int magicalAttack) {
 
-        if ((opponentDamage + magicalAttack) > characterdefense) {
+        if ((opponentDamage + magicalAttack) >= characterdefense) {
             characterHealth -= ((opponentDamage + magicalAttack) - characterdefense);
-        }   else   {
+        }
+        else {
             System.out.println("The shield have absorbed all damages");
         }
         magicalAttack = magicAttack(magicalAttack); // the function change the attack for a magician (reduce per 2 the magicalattack)
@@ -123,13 +124,12 @@ public class Fight extends Game_Menu {
 
         boolean turn = true; // used to switch turn between the different characters
         choice();
-        int numberturn = 0; //  used to know on which turn we are
+        int numberturn = 1; //  used to know on which turn we are
 
-        System.out.println("turn n°" + numberturn);
-        System.out.println(j1_name);
-        System.out.println("Hp :" + j1_health);
-        System.out.println(j2_name);
-        System.out.println("Hp :" + j2_health);
+        System.out.println("The pizza power is send to every fighter. Pray the Pizza god.");
+        System.out.println("Turn n°" + numberturn);
+        System.out.println(j1_name + ":" + j2_name + ":");
+        System.out.println("HP :" + j1_health + "HP :" + j2_health);
 
         while (j1_health >= 1 && j2_health >= 1) {  // used to make characters fight until one die
 
@@ -159,11 +159,16 @@ public class Fight extends Game_Menu {
                     }
                 }
             numberturn += 1;
-            System.out.println("turn n°" + numberturn);
-            System.out.println(j1_name);
-            System.out.println("Hp :" + j1_health);
-            System.out.println(j2_name);
-            System.out.println("Hp :" + j2_health);
+            if(numberturn % 2 == 0) {
+                System.out.println("Pizza god likes the fight. He gave +2 motivation to everyone.");
+            }
+            else {
+                System.out.println("Pizza god want more tomato sauce.");
+            }
+            System.out.println("");
+            System.out.println("Turn n°" + numberturn);
+            System.out.println(j1_name + "  HP :" + j1_health);
+            System.out.println(j2_name + "  HP :" + j2_health);
         }
         if(j1_health <= 0) {
             return j2_archetype + j2_name + " won the game ";

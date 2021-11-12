@@ -33,6 +33,10 @@ public class TestCharacterList extends Character {
         int health = getHealth();
         int damage = getDamage();
         int speed = getSpeed();
+        int defense = Warrior.getDefense();
+        int magicDamage = Mage.getMagicDamage();
+        int dodge = Thief.getDodge();
+        int critRate = Thief.getCriticalHit();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -41,13 +45,42 @@ public class TestCharacterList extends Character {
         System.out.println("Choose the name");
         pseudo= name = scanner.nextLine();
         String archetype = classVerif();
-        classValues(archetype);
+        classValues();
         System.out.println("Choose the health");
-        health = scanner.nextInt();
+        List indexplace = new ArrayList();
+
+        while(check == 0) {
+            try {
+                health = scanner.nextInt();
+                check = 1;
+            }
+            catch (Exception e) {
+                health = scanner.nextInt();
+            }
+        }
+
         System.out.println("Choose the damage");
-        damage = scanner.nextInt();
+
+        while (check == 1) {
+            try {
+                damage = scanner.nextInt();
+                check = 2;
+            }
+            catch (Exception e) {
+                damage = scanner.nextInt();
+            }
+        }
+
         System.out.println("Choose the speed");
-        speed = scanner.nextInt();
+
+        while ( check == 2)
+        try {
+            speed = scanner.nextInt();
+            check = 3;
+        }
+        catch (Exception e) {
+            speed = scanner.nextInt();
+        }
 
         indexplace.add(name);
         indexplace.add(archetype);
