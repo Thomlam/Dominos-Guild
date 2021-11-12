@@ -9,9 +9,6 @@ public class Mage extends Character{
         return magicDamage;
     }
 
-    public static String getArchetype() {
-        return archetype;
-    }
 
     public static int magicAttack(int opponentHealth, int charDamage, int charMagicDamage) {
         int damage = opponentHealth - (charDamage + charMagicDamage);
@@ -29,7 +26,7 @@ public class Mage extends Character{
     }
 
     public static void displayMage() {
-        System.out.println("Class : " + getArchetype());
+        System.out.println("Class : " + archetype);
         displayStats();
         System.out.println("Magic Damage : " + getMagicDamage());
     }

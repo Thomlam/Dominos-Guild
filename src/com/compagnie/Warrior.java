@@ -7,7 +7,6 @@ public class Warrior extends Character{
 
     public static int getDefense() { return defense; }
 
-    public static String getArchetype() { return archetype; }
 
     public static int damage(int opponentDamage) {
         int health = getHealth();
@@ -18,7 +17,7 @@ public class Warrior extends Character{
     private static String toString (int attribute) { return "" + attribute; }
 
     public static void displayWarrior() {
-        System.out.println("Class : " + getArchetype());
+        System.out.println("Class : " + archetype);
         displayStats();
         System.out.println("Defense : " + getDefense());
     }
